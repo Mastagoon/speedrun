@@ -5,7 +5,7 @@ export default function Home() {
 	const [hours, setHours] = useState(0)
 	const [minutes, setMinutes] = useState(0)
 	const [seconds, setSeconds] = useState(0)
-	const [countdownDate, setcoutndownDate] = useState(new Date("Mar 01, 2023 15:00:00").getTime())
+	const [countdownDate, setcoutndownDate] = useState(new Date("Mar 01, 2023 16:00:00").getTime())
 
 	const dateToHoursMinutseSeconds = (date) => {
 		const days = Math.floor(date / (1000 * 60 * 60 * 24))
