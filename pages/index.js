@@ -20,16 +20,18 @@ export default function Home() {
     return number < 10 ? `0${number}` : number
   }
 
-  useEffect(() => {
-    setInterval(() => {
-      const now = new Date().getTime()
-      const distance = countdownDate - now
-      const { days, hours, minutes, seconds } = dateToHoursMinutseSeconds(distance)
-      setDays(addZeroToTheLeft(days))
-      setHours(addZeroToTheLeft(hours))
-      setMinutes(addZeroToTheLeft(minutes))
-      setSeconds(addZeroToTheLeft(seconds))
-    }, 1000)
+	useEffect(() => {
+		if (countdownDate - new Date().getTime() > 0) {
+			setInterval(() => {
+				const now = new Date().getTime()
+				const distance = countdownDate - now
+				const { days, hours, minutes, seconds } = dateToHoursMinutseSeconds(distance)
+				setDays(addZeroToTheLeft(days))
+				setHours(addZeroToTheLeft(hours))
+				setMinutes(addZeroToTheLeft(minutes))
+				setSeconds(addZeroToTheLeft(seconds))
+			}, 1000)
+		}
   }, [])
 
   return <div className="flex h-screen w-screen justify-center items-center">
